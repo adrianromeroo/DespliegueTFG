@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link type="text/css" href="CSS/Estilos.css">
+</head>
+<body>
+
+	<header class="bg-dark text-center text-white pt-4">
+        <h1><b>Temple GYM</b></h1>
+        <h4> Tu gimnasio online con rutinas de ejercicios en casa, planes de entrenamiento y dietas </h4>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light text-white mt-15">
+          <p></p>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" th:href="@{/login}" href="login.html">Login <span class="sr-only">(current)</span></a>
+              </li>          
+              <li class="nav-item">
+                <a class="nav-link" href="registration.html" th:href="@{/registration}"> Register </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+	
+	<br>
+	<br>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-6 col-md-offset-3">
+				
+				<h1> Login </h1>
+				<form th:action="@{/login}" method="post">
+					
+					<!-- error message -->
+					<div th:if="${param.error}">
+						<div class="alert alert-danger">Invalid username or
+							password.</div>
+					</div>
+				
+					<!-- logout message -->
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">You have been logged out.</div>
+					</div>
+					
+					<div class = "form-group">
+						<label for ="username"> Username </label> :
+						<input type="text" class = "form-control" id ="username" name = "username"
+						placeholder="Enter Username" autofocus="autofocus">
+					</div>
+					
+					<div class="form-group">
+						<label for="password">Password</label>: <input type="password"
+							id="password" name="password" class="form-control"
+							placeholder="Enter Password" />
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="login-submit" id="login-submit"
+									class="form-control btn btn-primary" value="Log In" />
+							</div>
+						</div>
+					</div>
+				</form>
+				<div class="form-group mb-5">
+						<span>New user? <a href="/" th:href="@{/registration}">Register
+								here</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- FOOTER INFORMATIVO -->
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4">
+          
+        <section class="">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Contacto</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white"></a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">955 777 666</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">600 154 980</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">templegym@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Apartados Web</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Inicio</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Planes De Entrenamiento</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Fuertacos</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">COVID 19</a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Apartados Web</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Noticias</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Libro de visitas</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Contacto</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Merchandising</a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Síguenos en</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Instagram</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Facebook</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Twitter</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Linkedin</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright:
+        <a class="text-white">TempleGYM.com</a>
+      </div>
+    </footer>
+    
+    <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+</body>
+</html>
